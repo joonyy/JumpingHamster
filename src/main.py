@@ -27,8 +27,10 @@ class Game:
             self.highscore = 0
 
         # load spritesheet image
-        self.spritesheet = Spritesheet(path.join(img_dir, SPRITESHEET))
-
+        self.spritesheet1 = Spritesheet(path.join(img_dir, SPRITESHEET))
+        self.spritesheet2 = Spritesheet(path.join(img_dir, HAMSTER))
+        self.spritesheet3 = Spritesheet(path.join(img_dir, HAMLEFT))
+        self.spritesheet4 = Spritesheet(path.join(img_dir, HAMRIGHT))
     def new(self):
         # start a new game
         self.score = 0
@@ -46,7 +48,7 @@ class Game:
         self.run()
 
     def run(self):
-        # Game Loop
+        #  Loop
         self.playing = True
         while self.playing:
             self.clock.tick(FPS)

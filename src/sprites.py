@@ -15,7 +15,6 @@ class Spritesheet:
         image.blit(self.spritesheet, (0, 0), (x, y, width, height))
         image = pg.transform.scale(image, (width//2, height//2))
         return image
-    
 
 class Player(pg.sprite.Sprite):
     def __init__(self, game):
@@ -38,20 +37,24 @@ class Player(pg.sprite.Sprite):
         self.acc = vec(0, 0)
 
     def load_images(self):
-        self.standing_frames = [self.game.spritesheet.get_image(614, 1063, 120, 191),
-                                self.game.spritesheet.get_image(690, 406, 120, 201)]
+        
+        self.standing_frames = [self.game.spritesheet2.get_image(0, 0, 120, 158),
+                                 self.game.spritesheet2.get_image(0, 0, 120, 158)]
+                                
+        #self.standing_frames = [self.game.spritesheet2.get_my_image()]
+        
         for frame in self.standing_frames:
             frame.set_colorkey(BLACK)
 
-        self.walk_frames_r = [self.game.spritesheet.get_image(678, 860, 120, 201),
-                              self.game.spritesheet.get_image(692, 1458, 120, 207)]
+        self.walk_frames_r = [self.game.spritesheet3.get_image(0, 0, 120, 158),
+                              self.game.spritesheet4.get_image(0, 0, 120, 158)]
         for frame in self.walk_frames_r:
             frame.set_colorkey(BLACK)
 
         self.walk_frames_l = [pg.transform.flip(frame, True, False)
                               for frame in self.walk_frames_r]
 
-        self.jump_frame = self.game.spritesheet.get_image(382, 763, 150, 181)
+        self.jump_frame = self.game.spritesheet2.get_image(0,0, 120, 158)
         self.jump_frame.set_colorkey(BLACK)
 
     def jump_cut(self):
@@ -129,8 +132,8 @@ class Platform(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.game = game
 
-        images = [self.game.spritesheet.get_image(0, 288, 380, 94),
-                  self.game.spritesheet.get_image(213, 1662, 201, 100)]
+        images = [self.game.spritesheet1.get_image(0, 288, 380, 94),
+                  self.game.spritesheet1.get_image(213, 1662, 201, 100)]
 
         self.image = choice(images)
         self.image.set_colorkey(BLACK)

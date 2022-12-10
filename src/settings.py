@@ -1,5 +1,5 @@
 # game options/settings
-TITLE = "Jumpy"
+TITLE = "Jumping Hamster"
 WIDTH = 480
 HEIGHT = 600
 FPS = 60
@@ -7,6 +7,8 @@ FONT_NAME = 'arial'
 HS_FILE = "highscore.txt"
 SPRITESHEET = "spritesheet_jumper.png"
 HAMSTER = "Hamster_jump.png"
+HAMLEFT = "Hamster_left.png"
+HAMRIGHT = "Hamster_right.png"
 # Player properties
 PLAYER_ACC = 1.5
 PLAYER_FRICTION = -0.2
