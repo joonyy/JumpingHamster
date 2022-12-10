@@ -4,6 +4,8 @@ TITLE = "Jumping Hamster"
 Width = 800
 Height = 600
 FPS = 60
+Font_name = 'arial'
+HS = "highscore.txt"
 
 #necessity
 Acceleration = 1.5
